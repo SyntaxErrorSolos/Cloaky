@@ -68,7 +68,7 @@ client.on('messageCreate', async (message) => {
                 'No remaining tokens. Please purchase some or wait for the monthly refresh.',
             });
           }
-          Tokens.findOneAndUpdate(
+          await Tokens.findOneAndUpdate(
             {
               User: message.author.id,
             },
@@ -96,7 +96,7 @@ client.on('messageCreate', async (message) => {
     try {
       message.channel.send({
         content:
-          '# Help Command\n**__Available Commands: `!imagine`, `!settings`, `!tokens [buy || remaining]`, `!chat`**__\n### Message from developer: I may make this better if I want to lol.',
+          '# Help Command\n**__Available Commands: `!imagine`, `!settings`, `!tokens [buy || remaining]`, `!chat`__**\n### Message from developer: I may make this better if I want to lol.',
       });
     } catch (err) {
       return console.log(err);
